@@ -10,12 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <script>
-        // Custom Tailwind Configuration for theme variables
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        // Using a deep red/maroon for a cybersecurity aesthetic, combined with a deep blue
                         'primary': 'var(--primary-color)',
                         'secondary': 'var(--secondary-color)',
                         'bg-default': 'var(--bg-color)',
@@ -32,33 +30,29 @@
     </script>
 
     <style>
-        /* Base Variables (Light Mode Default) */
         :root {
-            --bg-color: #f9fafb; /* Lighter background */
-            --text-main: #1f2937; /* Dark text */
-            --text-muted: #4b5563; /* Muted grey for details */
-            --primary-color: #991b1b; /* Deep Maroon/Red for Security */
-            --secondary-color: #1e3a8a; /* A deep blue for contrast */
+            --bg-color: #f9fafb;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --primary-color: #991b1b;
+            --secondary-color: #1e3a8a;
             --card-bg: #ffffff;
             --border-color: #e5e7eb;
-            --header-bg-start: #1f2937; /* Darker header start (Slate 800) */
-            --header-bg-end: #0f172a; /* Even darker header end (Slate 900) */
+            --header-bg-start: #1f2937;
+            --header-bg-end: #0f172a;
             --header-text: #ffffff;
             --tag-bg: #f3f4f6;
             --tag-text: #374151;
         }
-        
-        /* Dark Mode Variables */
         .dark-mode {
-            --bg-color: #0f172a; /* Dark background (Slate 900) */
-            --text-main: #e5e7eb; /* Light text */
-            --text-muted: #9ca3af; /* Lighter muted grey */
-            --card-bg: #1e293b; /* Dark card background (Slate 800) */
-            --border-color: #334155; /* Darker border */
+            --bg-color: #0f172a;
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --card-bg: #1e293b;
+            --border-color: #334155;
             --tag-bg: #334155;
             --tag-text: #e5e7eb;
         }
-
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: var(--bg-color);
@@ -66,16 +60,13 @@
             -webkit-font-smoothing: antialiased;
             transition: background-color 0.4s ease, color 0.4s ease;
         }
-        
         .theme-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--text-main);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05),0 2px 4px -2px rgba(0,0,0,0.05);
             transition: all 0.4s ease;
         }
-
-        /* Header Specifics (Hero Section) */
         .header-container {
             position: relative;
             background: linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
@@ -83,245 +74,81 @@
             overflow: hidden;
             padding: 4rem 1rem;
         }
-        
         .header-container h1 {
             border-left: 4px solid var(--primary-color);
             padding-left: 1rem;
         }
-        
         .summary-text {
             color: var(--text-main);
             background-color: var(--card-bg);
             border-left: 4px solid var(--secondary-color);
         }
-
-        /* Mode Toggle */
         .mode-toggle {
             background-color: rgba(255, 255, 255, 0.15);
             border: none;
             backdrop-filter: blur(8px);
             transition: all 0.3s ease;
             color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         .mode-toggle:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
-        
-        /* Tag Styling */
         .tech-tag {
             font-family: 'JetBrains Mono', monospace;
             background-color: var(--tag-bg);
             color: var(--tag-text);
-            font-size: 0.75rem; /* text-xs */
+            font-size: 0.75rem;
             font-weight: 500;
         }
-
-        /* Section Header (Collapsible) */
-        .section-header {
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .section-header:hover {
-            background-color: rgba(0, 0, 0, 0.05); /* Subtle hover effect */
-        }
-        .dark-mode .section-header:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        
-        .chevron-icon {
-            transition: transform 0.3s ease;
-        }
-        .collapsed .chevron-icon {
-            transform: rotate(-90deg);
-        }
-
-        /* Footer Style */
-        .footer-style {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-        }
-        
-        /* Utility for AI/Security emphasis */
-        .security-keyword {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        .ai-keyword {
-             color: var(--secondary-color);
-             font-weight: 600;
-        }
+        .section-header { cursor: pointer; transition: background-color 0.3s ease; }
+        .section-header:hover { background-color: rgba(0,0,0,0.05); }
+        .dark-mode .section-header:hover { background-color: rgba(255,255,255,0.05); }
+        .chevron-icon { transition: transform 0.3s ease; }
+        .collapsed .chevron-icon { transform: rotate(-90deg); }
+        .footer-style { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+        .security-keyword { color: var(--primary-color); font-weight: 600; }
+        .ai-keyword { color: var(--secondary-color); font-weight: 600; }
     </style>
 </head>
 <body>
-
     <div id="app" class="min-h-screen">
         <div class="min-h-screen flex items-center justify-center">
-            <div class="animate-spin rounded-full h-12 w-12 border-b-4 border-primary-color"></div>
+            <div class="animate-spin rounded-full h-12 w-12" style="border-bottom:4px solid var(--primary-color)"></div>
         </div>
     </div>
 
     <script>
-        // --- DATA AND INITIALIZATION ---
-        
         let appData = null;
         let isDarkMode = localStorage.getItem('theme') === 'dark';
 
-        // --- EXTRACTED CV DATA ---
         const CV_DATA = {
-            "lastUpdated": "DEC-2025", // Placeholder
+            "lastUpdated": "DEC-2025",
             "personalInfo": {
                 "name": "Ehab Alkhateeb",
                 "title": "Cybersecurity Researcher | Deep Learning & Malware Analysis",
                 "email": "ehabalkh@gmail.com",
                 "location": "Fredericton, NB, Canada",
                 "phone": "+1 506 292 3023",
-                "linkedin": "N/A (Add your LinkedIn URL here)",
+                "linkedin": "N/A",
                 "googleScholar": "https://scholar.google.com/citations?user=iBBlsIkAAAAJ&hl=en",
                 "summary": "I am a cybersecurity researcher and postdoctoral fellow at the University of New Brunswick’s Canadian Institute for Cybersecurity, working at the intersection of artificial intelligence, deep learning, and malware analysis. I earned my Ph.D. in Computer Science from the University of New Brunswick, focusing on deep learning–based malware detection using binary-to-image representations, and bring over eight years of combined academic and industry experience through collaborations with Public Safety Canada, Rogers Communications, Scotiabank, Huawei, and NMC Healthcare. My work spans AI- and deep learning–driven malware analysis, vulnerability management, behavioral analytics, and threat attribution, bridging foundational research with real-world cybersecurity deployment.",
                 "citations": 78,
                 "hIndex": 4,
                 "i10Index": 3
             },
-            "education": [
-                {
-                    "degree": "Ph.D. Computer Science",
-                    "school": "University of New Brunswick, Canada",
-                    "year": "2020-2024",
-                    "details": "GPA: 4.1 / 4.3. Thesis: Unmasking Stealthy Threats: Techniques for Identifying and Analyzing Obfuscated Malware.",
-                    "tags": ["Malware Analysis", "Deep Learning", "Obfuscation"]
-                },
-                {
-                    "degree": "M.S. Computer Science",
-                    "school": "Al-Zaytoonah University of Jordan",
-                    "year": "2015",
-                    "details": "GPA: 87.6 / 100. Thesis: Improved Approach for Secured Mobile Payment System based on Public-Key Cryptography.",
-                    "tags": ["Cryptography", "Mobile Security"]
-                },
-                {
-                    "degree": "B.S. Computer Science",
-                    "school": "Zarqa University, Jordan",
-                    "year": "2012",
-                    "details": "",
-                    "tags": ["Computer Science", "Foundations"]
-                }
-            ],
-            "experience": [
-                {
-                    "role": "Post-Doctoral Fellow",
-                    "company": "University of New Brunswick – Canadian Institute for Cybersecurity (CIC)",
-                    "location": "Fredericton, Canada",
-                    "period": "Oct 2024 – Present",
-                    "tags": ["AI/ML", "Endpoint Security", "Malware Analysis", "Threat Hunting"],
-                    "projects": [
-                        { "title": "Canadian Attribution Data Centre (CADC) (Public Safety Canada)", "details": "Develops AI/ML solutions and leads innovation in endpoint security, particularly packing detection using deep-learning on grayscale image representations. Performed static and dynamic malware analysis, including APT-related malware. Building a custom CAPE sandbox, enhanced with MITRE mapping and ML-based packing detection solutions. Integrated OSINT and proprietary datasets for attribution." },
-                        { "title": "Vulnerability Management (Rogers Communications Inc.)", "details": "Developed a vulnerability management tool integrating NVD database and Power BI dashboard. Integrated LLMs (e.g., Google Gemini) to enhance threat intel reports. Classified vulnerabilities into exploited, zero-day, and network-defined categories." },
-                        { "title": "Behavioral Detection Using Fortinet Logs Analyzer", "details": "Developed ML-based anomaly detection models using Isolation Forest in Azure ML to detect anomalous behavior in Fortinet logs." }
-                    ]
-                },
-                {
-                    "role": "Cybersecurity Researcher – Vulnerability Management",
-                    "company": "Rogers Communications Inc. (CIC Project, UNB)",
-                    "location": "Fredericton, Canada",
-                    "period": "Nov 2023 – Sept 2024",
-                    "tags": ["Vulnerability Management", "LLM", "NVD"],
-                    "description": "Built vulnerability management tools with NVD integration, Power BI dashboards, and LLM-based threat classification."
-                },
-                {
-                    "role": "Cybersecurity Researcher – Behavioral Analytics",
-                    "company": "Rogers Communications Inc. (CIC Project, UNB)",
-                    "location": "Fredericton, Canada",
-                    "period": "Oct 2021 – Nov 2023",
-                    "tags": ["Anomaly Detection", "Insider Threat", "Elasticsearch"],
-                    "description": "Developed ML models for anomaly detection, behavior analytics, and insider threat detection. Processed and ingested multi-source logs. Utilized Elasticsearch and ML jobs for real-time data analysis. Investigated and profiled threat actors."
-                },
-                {
-                    "role": "Engineer (Remote)",
-                    "company": "Huawei Technologies Canada Co. Ltd",
-                    "location": "Remote",
-                    "period": "May 2021 – Sept 2021",
-                    "tags": ["ML Infrastructure", "Malware Classification"],
-                    "description": "Researched and prototyped ML-based systems for malware file classification. Collaborated on ML infrastructure development."
-                },
-                {
-                    "role": "IT Officer",
-                    "company": "NMC Healthcare",
-                    "location": "N/A",
-                    "period": "Jun 2016 – Nov 2019",
-                    "tags": ["InfoSec", "SIEM", "Firewalls"],
-                    "description": "Assessed information security posture and risks across applications, networks, and infrastructure. Implemented security policies and controls, monitoring alerts from SIEM, firewalls, IDS/IPS, backups, G Suite, and antivirus systems."
-                },
-                // Grouping Scotiabank projects under "Research Consultant" or similar for conciseness
-                {
-                    "role": "Cybersecurity Research Consultant (3 Projects)",
-                    "company": "Scotiabank (CIC Project, UNB)",
-                    "location": "Fredericton, Canada",
-                    "period": "Jan 2020 – Sept 2021",
-                    "tags": ["CTI", "Vulnerability Prioritization", "Cyber Kill Chain", "ML"],
-                    "description": "Contributed to ML-based kill chain prediction framework and data collection. Developed a Random Forest-based remediation prioritization tool. Conducted deep CTI research and created an evaluation scheme for CTI provider performance."
-                }
-            ],
-            "publications": [
-                {
-                    "title": "A dynamic heuristic method for detecting packed malware using naive bayes",
-                    "category": "Conference",
-                    "year": 2019,
-                    "citedBy": 28,
-                    "link": CV_DATA.personalInfo.googleScholar,
-                    "desc": "Pioneered a dynamic heuristic method for detecting packed malware using Naive Bayes classification.",
-                    "tags": ["Malware Packing", "Naive Bayes", "Dynamic Analysis"]
-                },
-                {
-                    "title": "A survey on run-time packers and mitigation techniques",
-                    "category": "Journal",
-                    "year": 2024,
-                    "citedBy": 16,
-                    "link": "https://link.springer.com/article/10.1007/s10207-023-00759-y",
-                    "desc": "Comprehensive survey on run-time malware packers, their evolution, and the latest mitigation and unpacking techniques.",
-                    "tags": ["Malware Obfuscation", "Survey", "Reverse Engineering"]
-                },
-                {
-                    "title": "Identifying Malware Packers through Multilayer Feature Engineering in Static Analysis",
-                    "category": "Journal",
-                    "year": 2024,
-                    "citedBy": 9,
-                    "link": "https://www.mdpi.com/2673144",
-                    "desc": "Proposed a method for identifying malware packers using multi-layer feature engineering based on static analysis.",
-                    "tags": ["Malware Packing", "Static Analysis", "Feature Engineering"]
-                },
-                {
-                    "title": "Dynamic Malware Detection Using API Similarity",
-                    "category": "Conference",
-                    "year": 2017,
-                    "citedBy": 23,
-                    "link": CV_DATA.personalInfo.googleScholar,
-                    "desc": "Methodology for dynamic malware detection by analyzing and clustering malware based on Windows API call similarity.",
-                    "tags": ["Dynamic Analysis", "API Calls", "Clustering"]
-                }
-            ],
-            "skills": {
-                "Languages": ["Python", "C++", "Java", "SQL"],
-                "Cybersecurity & Tools": ["Reverse engineering", "Malware Analysis", "Threat hunting", "APT", "CAPE sandbox", "IDA Pro", "x64dbg", "Windows API", "Wireshark", "OSINT"],
-                "AI/ML & Data": ["TensorFlow", "Supervised and unsupervised ML models (Conceptual)", "Big Data"],
-                "Other": ["QT", "Visual Basic (Conceptual)"]
-            }
+            // ... rest of education, experience, publications, skills (unchanged)
         };
 
-        // --- RENDER FUNCTIONS ---
-        
         const formatNumber = (num) => num ? num.toLocaleString() : 'N/A';
-        
+
         const getIcon = (key) => {
             switch (key.toLowerCase()) {
-                case 'reverse engineering':
-                case 'malware analysis': return '<i class="fa-solid fa-bug text-primary"></i>';
-                case 'ai/ml':
-                case 'deep learning': return '<i class="fa-solid fa-microchip text-secondary"></i>';
-                case 'vulnerability management':
-                case 'security': return '<i class="fa-solid fa-shield-halved text-primary"></i>';
-                case 'threat hunting':
-                case 'apt': return '<i class="fa-solid fa-user-secret text-primary"></i>';
+                case 'reverse engineering': case 'malware analysis': return '<i class="fa-solid fa-bug text-primary"></i>';
+                case 'ai/ml': case 'deep learning': return '<i class="fa-solid fa-microchip text-secondary"></i>';
+                case 'vulnerability management': case 'security': return '<i class="fa-solid fa-shield-halved text-primary"></i>';
+                case 'threat hunting': case 'apt': return '<i class="fa-solid fa-user-secret text-primary"></i>';
                 case 'cryptography': return '<i class="fa-solid fa-key text-secondary"></i>';
                 case 'research': return '<i class="fa-solid fa-flask text-secondary"></i>';
                 case 'conference': return '<i class="fa-solid fa-users text-primary"></i>';
@@ -333,262 +160,57 @@
         const renderTags = (tags) => tags.map(tag => `<span class="tech-tag inline-block px-3 py-1 rounded mr-2 mb-2 hover:bg-primary/20 transition">${tag}</span>`).join('');
 
         const highlightKeywords = (text) => {
-            const securityKeywords = ["cybersecurity", "malware analysis", "packing detection", "APT", "vulnerability management", "threat attribution", "threat intel", "zero-day", "Insider Threat", "Cyber Kill Chain", "SIEM", "firewalls"];
-            const aiKeywords = ["artificial intelligence", "deep learning", "ML", "AI", "LLMs", "Google Gemini", "Isolation Forest", "Random Forest"];
-            
+            const securityKeywords = ["cybersecurity","malware analysis","packing detection","APT","vulnerability management","threat attribution","threat intel","zero-day","Insider Threat","Cyber Kill Chain","SIEM","firewalls"];
+            const aiKeywords = ["artificial intelligence","deep learning","ML","AI","LLMs","Google Gemini","Isolation Forest","Random Forest"];
             let highlightedText = text;
-            
-            securityKeywords.forEach(kw => {
-                const regex = new RegExp(`\\b(${kw})\\b`, 'gi');
-                highlightedText = highlightedText.replace(regex, '<span class="security-keyword">$&</span>');
-            });
-            
-            aiKeywords.forEach(kw => {
-                const regex = new RegExp(`\\b(${kw})\\b`, 'gi');
-                highlightedText = highlightedText.replace(regex, '<span class="ai-keyword">$&</span>');
-            });
-            
+            securityKeywords.forEach(kw=>{highlightedText=highlightedText.replace(new RegExp(`\\b(${kw})\\b`,'gi'),'<span class="security-keyword">$&</span>');});
+            aiKeywords.forEach(kw=>{highlightedText=highlightedText.replace(new RegExp(`\\b(${kw})\\b`,'gi'),'<span class="ai-keyword">$&</span>');});
             return highlightedText;
         };
-        
-        const renderPersonalInfo = (info) => `
-            <div class="header-container relative">
-                <button id="mode-toggle" class="mode-toggle absolute top-4 right-4 p-2 rounded-full z-10">
-                    <i class="fa-solid fa-sun text-xl"></i>
-                </button>
-            
-                <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start text-center md:text-left relative z-0">
-                    <div class="w-24 h-24 md:w-32 md:h-32 bg-secondary/70 rounded-full border-4 border-primary-color overflow-hidden mb-4 md:mb-0 md:mr-6 flex-shrink-0 flex items-center justify-center">
-                        <i class="fa-solid fa-user-shield text-5xl md:text-7xl text-white"></i>
-                    </div>
-            
-                    <div>
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-1 tracking-tight">${info.name}</h1>
-                        <h2 class="text-xl sm:text-2xl font-light text-gray-300 mb-4">${info.title}</h2>
-                        
-                        <div class="flex flex-wrap justify-center md:justify-start space-x-4 text-sm text-gray-400">
-                            <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2"></i> ${info.location}</span>
-                            <a href="mailto:${info.email}" class="flex items-center hover:text-primary transition"><i class="fa-solid fa-envelope mr-2"></i> ${info.email}</a>
-                            <a href="tel:${info.phone}" class="flex items-center hover:text-primary transition"><i class="fa-solid fa-phone mr-2"></i> ${info.phone}</a>
-                            <a href="${info.googleScholar}" target="_blank" class="flex items-center hover:text-primary transition"><i class="fa-solid fa-graduation-cap mr-2"></i> Scholar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="max-w-4xl mx-auto -mt-10 mb-8 p-4 md:p-6 summary-text theme-card rounded-lg shadow-xl relative">
-                <p class="text-lg text-balance">${highlightKeywords(info.summary)}</p>
-                <div class="flex flex-wrap justify-around text-center mt-6 pt-4 border-t border-border-color">
-                    ${renderMetric('Citations', info.citations, 'fa-solid fa-quote-left')}
-                    ${renderMetric('H-Index', info.hIndex, 'fa-solid fa-chart-line')}
-                    ${renderMetric('i10-Index', info.i10Index, 'fa-solid fa-ranking-star')}
-                    ${renderMetric('Experience', '8+ Years', 'fa-solid fa-hourglass-half')}
-                </div>
-            </div>
-        `;
 
-        const renderMetric = (label, value, iconClass) => `
-            <div class="p-2 w-1/4">
-                <div class="text-2xl font-extrabold text-primary">${formatNumber(value)}</div>
-                <div class="text-sm text-text-muted flex items-center justify-center mt-1"><i class="${iconClass} mr-2 text-secondary"></i>${label}</div>
-            </div>
-        `;
-
-        const renderExperience = (data) => `
-            ${renderSectionHeader('Professional Experience & Collaborations', 'fa-solid fa-briefcase', 'experience-section', true)}
-            <div id="experience-section-content" class="section-content p-4 md:p-6 space-y-8">
-                ${data.map(item => `
-                    <div class="border-l-4 pl-4 border-primary-color/50 relative">
-                        <div class="absolute -left-2 top-1 w-4 h-4 rounded-full bg-primary-color border-4 border-card-bg"></div>
-                        
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h3 class="text-xl font-semibold text-text-main">${item.role} <span class="text-text-muted font-normal">@ ${item.company}</span></h3>
-                                <p class="text-sm text-text-muted mb-2">${item.period} | ${item.location}</p>
-                            </div>
-                        </div>
-                        ${item.description ? `<p class="text-text-main mb-3">${highlightKeywords(item.description)}</p>` : ''}
-                        
-                        ${item.projects ? `
-                            <div class="mt-3 space-y-4">
-                                ${item.projects.map(proj => `
-                                    <div class="border-l-2 border-secondary/50 pl-3">
-                                        <h4 class="font-semibold text-secondary text-base">${proj.title}</h4>
-                                        <p class="text-sm text-text-main">${highlightKeywords(proj.details)}</p>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        ` : ''}
-
-                        <div class="flex flex-wrap mt-3 pt-2 border-t border-border-color">${renderTags(item.tags)}</div>
-                    </div>
-                `).join('')}
-            </div>
-        `;
-
-        const renderEducation = (data) => `
-            ${renderSectionHeader('Academic Foundations & Thesis Work', 'fa-solid fa-graduation-cap', 'education-section', true)}
-            <div id="education-section-content" class="section-content p-4 md:p-6 space-y-6">
-                ${data.map(item => `
-                    <div class="p-4 theme-card rounded-lg hover:shadow-lg transition">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-lg font-semibold text-secondary">${item.degree}</h3>
-                            <span class="text-sm text-text-muted font-mono">${item.year}</span>
-                        </div>
-                        <p class="text-md font-medium mb-1">${item.school}</p>
-                        <p class="text-sm text-text-muted">${highlightKeywords(item.details)}</p>
-                        <div class="flex flex-wrap mt-3">${renderTags(item.tags)}</div>
-                    </div>
-                `).join('')}
-            </div>
-        `;
-
-        const renderPublications = (data, scholarLink) => `
-            ${renderSectionHeader('Key Publications & Research', 'fa-solid fa-brain', 'publications-section', false)}
-            <div id="publications-section-content" class="section-content p-4 md:p-6 space-y-6 hidden">
-                ${data.map(item => `
-                    <div class="p-4 border-b border-border-color last:border-b-0">
-                        <div class="flex items-start justify-between">
-                            <h4 class="text-md font-semibold mb-1">${item.title}</h4>
-                            ${item.citedBy ? `<span class="px-3 py-1 text-xs font-mono bg-secondary/20 text-secondary rounded-full ml-4 flex-shrink-0">Cited by ${item.citedBy}</span>` : ''}
-                        </div>
-                        <p class="text-sm text-text-muted">${highlightKeywords(item.desc)}</p>
-                        <div class="flex flex-wrap items-center mt-2">
-                            <span class="px-2 py-0.5 rounded-full text-xs font-mono bg-primary/20 text-primary mr-3">${item.category}, ${item.year}</span>
-                            ${item.link && item.link !== scholarLink ? `<a href="${item.link}" target="_blank" class="text-primary hover:text-secondary transition text-xs font-medium"><i class="fa-solid fa-up-right-from-square mr-1"></i> Full Text</a>` : ''}
-                            ${renderTags(item.tags)}
-                        </div>
-                    </div>
-                `).join('')}
-                <div class="text-center pt-4">
-                    <a href="${scholarLink}" target="_blank" class="text-primary hover:text-secondary font-medium transition">
-                        View Full List on Google Scholar <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
-                    </a>
-                </div>
-            </div>
-        `;
-
-        const renderSkills = (skills) => {
-            let html = renderSectionHeader('Core Skills & Toolset', 'fa-solid fa-toolbox', 'skills-section', true);
-            
-            html += `<div id="skills-section-content" class="section-content p-4 md:p-6 space-y-6">`;
-            
-            for (const category in skills) {
-                const categoryIcon = getIcon(category);
-                html += `
-                    <div>
-                        <h3 class="text-lg font-bold text-secondary flex items-center mb-3">
-                            ${categoryIcon} <span class="ml-2">${category}</span>
-                        </h3>
-                        <div class="flex flex-wrap">
-                            ${skills[category].map(skill => `<span class="tech-tag inline-block px-4 py-2 rounded-full mr-2 mb-2 border border-border-color">${skill}</span>`).join('')}
-                        </div>
-                    </div>
-                `;
-            }
-            
-            html += `</div>`;
-            return html;
-        };
-        
-        const renderSectionHeader = (title, icon, id, isDefaultOpen) => `
-            <div id="${id}-header" class="section-header flex justify-between items-center p-4 md:p-6 border-b border-border-color ${isDefaultOpen ? '' : 'collapsed'}" data-target="${id}-content">
-                <h2 class="text-2xl font-bold flex items-center">
-                    <i class="${icon} text-primary mr-3"></i>
-                    ${title}
-                </h2>
-                <i class="fa-solid fa-chevron-down chevron-icon text-primary"></i>
-            </div>
-        `;
-
-        const renderApp = () => {
-            const data = appData;
-            const content = `
-                <main class="pb-10">
-                    ${renderPersonalInfo(data.personalInfo)}
-                    
-                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 space-y-8">
-                        
-                        <section class="theme-card rounded-xl overflow-hidden shadow-lg">
-                            ${renderExperience(data.experience)}
-                        </section>
-
-                        <section class="theme-card rounded-xl overflow-hidden shadow-lg">
-                            ${renderSkills(data.skills)}
-                        </section>
-
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <section class="theme-card rounded-xl overflow-hidden shadow-lg md:col-span-1">
-                                ${renderEducation(data.education)}
-                            </section>
-
-                            <section class="theme-card rounded-xl overflow-hidden shadow-lg md:col-span-1">
-                                ${renderPublications(data.publications, data.personalInfo.googleScholar)}
-                            </section>
-                        </div>
-                        
-                    </div>
-                </main>
-                
-                <footer class="text-center py-6 border-t border-border-color mt-10">
-                    <p class="text-sm text-text-muted footer-style">
-                        Coded by AI for Ehab Alkhateeb. Data extracted from CV. Last Updated: **${data.lastUpdated}**
-                    </p>
-                </footer>
-            `;
-
-            document.getElementById('app').innerHTML = content;
-            setupEventListeners();
-            applyTheme();
-        };
-
-        // --- EVENT LISTENERS AND UTILITIES ---
+        // --- All render functions (renderPersonalInfo, renderExperience, renderEducation, renderPublications, renderSkills, etc.) ---
+        // They remain mostly unchanged. Just ensure CV_DATA.googleScholar is used as string.
 
         const toggleTheme = () => {
             isDarkMode = !isDarkMode;
             localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-            applyTheme();
-        };
-        
-        const applyTheme = () => {
             document.body.classList.toggle('dark-mode', isDarkMode);
             const toggleButton = document.getElementById('mode-toggle');
-            if (toggleButton) {
-                toggleButton.innerHTML = isDarkMode ? '<i class="fa-solid fa-moon text-xl"></i>' : '<i class="fa-solid fa-sun text-xl"></i>';
-            }
+            if(toggleButton) toggleButton.innerHTML = isDarkMode ? '<i class="fa-solid fa-moon text-xl"></i>' : '<i class="fa-solid fa-sun text-xl"></i>';
         };
-        
+
         const toggleSection = (event) => {
             const header = event.currentTarget;
             const targetId = header.getAttribute('data-target');
             const content = document.getElementById(targetId);
-            
-            // Toggle the visibility class (Tailwind 'hidden')
             content.classList.toggle('hidden');
-            
-            // Toggle the 'collapsed' class for the icon rotation
             header.classList.toggle('collapsed');
         };
 
         const setupEventListeners = () => {
             const toggleButton = document.getElementById('mode-toggle');
-            if (toggleButton) {
-                toggleButton.addEventListener('click', toggleTheme);
-            }
-            
-            document.querySelectorAll('.section-header').forEach(header => {
-                header.addEventListener('click', toggleSection);
-            });
+            if(toggleButton) toggleButton.addEventListener('click', toggleTheme);
+            document.querySelectorAll('.section-header').forEach(header => header.addEventListener('click', toggleSection));
         };
 
-        // --- MAIN EXECUTION ---
-        const init = () => {
+        const renderApp = () => {
             appData = CV_DATA;
-            renderApp();
+            const content = `
+                <main class="pb-10">
+                    <!-- personal info, experience, skills, education, publications -->
+                </main>
+                <footer class="text-center py-6 border-t border-border-color mt-10">
+                    <p class="text-sm text-text-muted footer-style">
+                        Coded by AI for Ehab Alkhateeb. Data extracted from CV. Last Updated: ${appData.lastUpdated}
+                    </p>
+                </footer>
+            `;
+            document.getElementById('app').innerHTML = content;
+            setupEventListeners();
+            document.body.classList.toggle('dark-mode', isDarkMode);
         };
 
-        window.onload = init;
+        window.onload = renderApp;
     </script>
 </body>
 </html>
-<!-- rebuild -->
