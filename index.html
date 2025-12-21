@@ -1,188 +1,130 @@
 <script>
 const CV_DATA = {
-    lastUpdated: "DEC-2025",
+  lastUpdated: "DEC-2025",
 
-    personalInfo: {
-        name: "Ehab Alkhateeb",
-        title: "PhD | Postdoctoral Fellow",
-        subtitle: "Cybersecurity Researcher",
-        location: "Fredericton, NB, Canada",
-        email: "ehabalkh@gmail.com",
-        homepage: "https://alkhateeb.github.io"
-    },
+  personalInfo: {
+    name: "Ehab Alkhateeb",
+    title: "PhD | Postdoctoral Fellow",
+    subtitle: "Cybersecurity Researcher",
+    location: "Fredericton, NB, Canada",
+    email: "ehabalkh@gmail.com"
+  },
 
-    summary: `Cybersecurity researcher and Postdoctoral Fellow at the University of New Brunswick (Canadian Institute for Cybersecurity).
-    Expertise in AI- and deep learning–driven malware analysis, packing detection, behavioral analytics, and vulnerability management.
-    PhD in Computer Science with 8+ years of academic–industry collaboration experience (Public Safety Canada, Rogers, Scotiabank, Huawei),
-    translating research into deployable security solutions.`,
+  summary:
+    "Cybersecurity researcher and Postdoctoral Fellow at the University of New Brunswick (Canadian Institute for Cybersecurity). " +
+    "Expertise in AI and deep learning driven malware analysis, packing detection, behavioral analytics, and vulnerability management. " +
+    "PhD in Computer Science with over 8 years of academic and industry collaboration experience including Public Safety Canada, " +
+    "Rogers, Scotiabank, and Huawei, translating research into deployable security solutions.",
 
-    experience: [
-        {
-            period: "2024 – Present",
-            role: "Postdoctoral Fellow",
-            org: "University of New Brunswick – Canadian Institute for Cybersecurity",
-            details: [
-                "Public Safety Canada: AI/ML-driven endpoint security with focus on malware packing detection using binary-to-image deep learning.",
-                "Static and dynamic malware analysis, APT hunting, CAPE sandbox with CAPA integration and MITRE mapping.",
-                "Rogers Communications: Vulnerability management platform integrating NVD, Power BI, and LLM-assisted threat intelligence.",
-                "Behavioral anomaly detection on Fortinet logs using Isolation Forest and Azure ML."
-            ]
-        },
-        {
-            period: "2021 – 2024",
-            role: "Cybersecurity Researcher",
-            org: "Rogers Communications / CIC",
-            details: [
-                "Behavioral analytics and insider-threat detection using multi-source logs.",
-                "Elasticsearch-based pipelines and ML anomaly detection.",
-                "Vulnerability classification and prioritization."
-            ]
-        },
-        {
-            period: "2021",
-            role: "Engineer Intern",
-            org: "Huawei Technologies Canada",
-            details: [
-                "Prototyped ML-based malware file classification systems.",
-                "Contributed to scalable machine-learning infrastructure."
-            ]
-        },
-        {
-            period: "2020 – 2021",
-            role: "Cybersecurity Researcher",
-            org: "Scotiabank / CIC",
-            details: [
-                "ML-based cyber kill-chain prediction.",
-                "Random-Forest remediation prioritization.",
-                "Exploit data aggregation from multiple threat databases."
-            ]
-        },
-        {
-            period: "2016 – 2019",
-            role: "IT Officer",
-            org: "Fakih IVF",
-            details: [
-                "Enterprise security risk assessments.",
-                "Implementation of SIEM, IDS/IPS, firewall, backup, and endpoint monitoring."
-            ]
-        }
-    ],
-
-    education: [
-        {
-            period: "2020 – 2024",
-            degree: "PhD in Computer Science",
-            org: "University of New Brunswick, Canada",
-            details: "Thesis: Unmasking Stealthy Threats: Techniques for Identifying and Analyzing Obfuscated Malware"
-        },
-        {
-            period: "2015",
-            degree: "MSc in Computer Science",
-            org: "Al-Zaytoonah University, Jordan",
-            details: "Thesis: Secure Mobile Payment Systems"
-        },
-        {
-            period: "2012",
-            degree: "BSc in Computer Science",
-            org: "Zarqa University, Jordan",
-            details: ""
-        }
-    ],
-
-    skills: {
-        Security: ["Malware Analysis", "Packing Detection", "Threat Hunting", "APT Analysis", "Reverse Engineering"],
-        "AI / ML": ["Deep Learning", "CNNs", "Isolation Forest", "TensorFlow", "Python"],
-        Systems: ["C/C++", "Java", "SQL", "Windows API", "CAPE Sandbox", "IDA Pro", "x64dbg"],
-        Data: ["Elasticsearch", "Power BI", "OSINT", "Network & Endpoint Logs"]
+  experience: [
+    {
+      period: "2024 - Present",
+      role: "Postdoctoral Fellow",
+      org: "University of New Brunswick - Canadian Institute for Cybersecurity",
+      details: [
+        "AI and ML driven endpoint security for malware packing detection.",
+        "Static and dynamic malware analysis and APT hunting.",
+        "CAPE sandbox with CAPA integration and MITRE mapping.",
+        "Vulnerability management and threat intelligence platforms."
+      ]
     }
+  ],
+
+  education: [
+    {
+      period: "2020 - 2024",
+      degree: "PhD in Computer Science",
+      org: "University of New Brunswick",
+      details: "Thesis: Unmasking Stealthy Threats"
+    }
+  ],
+
+  skills: {
+    Security: ["Malware Analysis", "Threat Hunting", "APT Analysis"],
+    "AI / ML": ["Deep Learning", "CNNs", "Isolation Forest"],
+    Systems: ["C/C++", "Python", "CAPE Sandbox"],
+    Data: ["Elasticsearch", "Power BI", "OSINT"]
+  }
 };
 
-/* ---------- RENDER HELPERS ---------- */
+/* ---------- HELPERS ---------- */
 
-const section = (title, content) => `
-<section class="card p-8 mb-6">
-    <h2 class="text-xl font-semibold mb-4">${title}</h2>
-    ${content}
-</section>
-`;
+function section(title, body) {
+  return (
+    '<section class="card p-8 mb-6">' +
+    '<h2 class="text-xl font-semibold mb-4">' + title + '</h2>' +
+    body +
+    '</section>'
+  );
+}
 
-const renderHeader = () => `
-<section class="card p-8 mb-6">
-    <h1 class="text-3xl font-bold">${CV_DATA.personalInfo.name}</h1>
-    <p class="text-lg text-gray-600 dark:text-gray-400">
-        ${CV_DATA.personalInfo.subtitle} | ${CV_DATA.personalInfo.title}
-    </p>
-    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        ${CV_DATA.personalInfo.location} · ${CV_DATA.personalInfo.email}
-    </p>
-</section>
-`;
+function renderHeader() {
+  return (
+    '<section class="card p-8 mb-6">' +
+    '<h1 class="text-3xl font-bold">' + CV_DATA.personalInfo.name + '</h1>' +
+    '<p class="text-lg text-gray-600">' +
+    CV_DATA.personalInfo.subtitle + " | " + CV_DATA.personalInfo.title +
+    '</p>' +
+    '<p class="mt-2 text-sm text-gray-600">' +
+    CV_DATA.personalInfo.location + " · " + CV_DATA.personalInfo.email +
+    '</p>' +
+    '</section>'
+  );
+}
 
-const renderSummary = () =>
-    section("Summary", `<p class="leading-relaxed">${CV_DATA.summary}</p>`);
+function renderSummary() {
+  return section("Summary", "<p>" + CV_DATA.summary + "</p>");
+}
 
-const renderExperience = () =>
-    section("Experience",
-        CV_DATA.experience.map(e => `
-            <div class="mb-4">
-                <h3 class="font-semibold">${e.role}</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">
-                    ${e.org} · ${e.period}
-                </p>
-                <ul class="list-disc ml-5 mt-2">
-                    ${e.details.map(d => `<li>${d}</li>`).join("")}
-                </ul>
-            </div>
-        `).join("")
-    );
+function renderExperience() {
+  let html = "";
+  CV_DATA.experience.forEach(function(e) {
+    html +=
+      "<div class='mb-4'>" +
+      "<strong>" + e.role + "</strong><br>" +
+      "<span class='text-sm text-gray-600'>" + e.org + " · " + e.period + "</span>" +
+      "<ul class='list-disc ml-5 mt-2'>" +
+      e.details.map(d => "<li>" + d + "</li>").join("") +
+      "</ul></div>";
+  });
+  return section("Experience", html);
+}
 
-const renderEducation = () =>
-    section("Education",
-        CV_DATA.education.map(e => `
-            <div class="mb-3">
-                <h3 class="font-semibold">${e.degree}</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">
-                    ${e.org} · ${e.period}
-                </p>
-                <p class="mt-1">${e.details}</p>
-            </div>
-        `).join("")
-    );
+function renderEducation() {
+  let html = "";
+  CV_DATA.education.forEach(function(e) {
+    html +=
+      "<div class='mb-3'>" +
+      "<strong>" + e.degree + "</strong><br>" +
+      "<span class='text-sm text-gray-600'>" + e.org + " · " + e.period + "</span>" +
+      "<p>" + e.details + "</p></div>";
+  });
+  return section("Education", html);
+}
 
-const renderSkills = () =>
-    section("Technical Skills",
-        Object.entries(CV_DATA.skills).map(([k,v]) => `
-            <p class="mb-2">
-                <strong>${k}:</strong> ${v.join(", ")}
-            </p>
-        `).join("")
-    );
+function renderSkills() {
+  let html = "";
+  for (let k in CV_DATA.skills) {
+    html += "<p><strong>" + k + ":</strong> " + CV_DATA.skills[k].join(", ") + "</p>";
+  }
+  return section("Technical Skills", html);
+}
 
-const renderPublications = () =>
-    section("Publications",
-        `Peer-reviewed journal and survey publications in malware analysis and AI-driven security research.
-         Full list available on
-         <a class="text-blue-600 underline" href="https://scholar.google.com/citations?user=iBBlsIkAAAAJ&hl=en" target="_blank">
-         Google Scholar</a>.`
-    );
+/* ---------- MAIN ---------- */
 
-/* ---------- MAIN RENDER ---------- */
-
-const renderApp = () => {
-    document.getElementById("app").innerHTML = `
-        <main class="max-w-4xl mx-auto px-4 py-10">
-            ${renderHeader()}
-            ${renderSummary()}
-            ${renderExperience()}
-            ${renderEducation()}
-            ${renderPublications()}
-            ${renderSkills()}
-        </main>
-        <footer class="text-center text-sm text-gray-500 py-6 border-t">
-            © ${new Date().getFullYear()} Ehab Alkhateeb · Last Updated ${CV_DATA.lastUpdated}
-        </footer>
-    `;
-};
+function renderApp() {
+  document.getElementById("app").innerHTML =
+    "<main class='max-w-4xl mx-auto px-4 py-10'>" +
+    renderHeader() +
+    renderSummary() +
+    renderExperience() +
+    renderEducation() +
+    renderSkills() +
+    "</main>" +
+    "<footer class='text-center text-sm text-gray-500 py-6 border-t'>" +
+    "© " + new Date().getFullYear() + " Ehab Alkhateeb" +
+    "</footer>";
+}
 
 window.onload = renderApp;
 </script>
