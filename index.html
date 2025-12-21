@@ -1,225 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ehab Alkhateeb - Cybersecurity Researcher | Deep Learning & Malware</title>
-    <link rel="icon" href="data:,">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0f111a;
-            --text-main: #f0f0f0;
-            --text-muted: #a0a0a0;
-            --primary-color: #3b82f6;
-            --secondary-color: #2563eb;
-            --card-bg: #1f1f2a;
-            --border-color: #2a2a3a;
-            --header-bg-start: #11121c;
-            --header-bg-end: #1c1c2e;
-            --header-text: #f0f0f0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            -webkit-font-smoothing: antialiased;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .theme-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            transition: transform 0.2s;
-        }
-
-        .theme-card:hover {
-            transform: translateY(-4px);
-        }
-
-        a {
-            color: var(--primary-color);
-            transition: color 0.2s;
-        }
-
-        a:hover {
-            color: var(--secondary-color);
-        }
-
-        .header-container {
-            position: relative;
-            background: linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
-            color: var(--header-text);
-            padding: 4rem 2rem 6rem 2rem;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        h1, h2, h3 {
-            font-weight: 600;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .section-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--primary-color);
-            display: inline-block;
-        }
-
-        .tag {
-            background-color: var(--primary-color);
-            color: #fff;
-            font-size: 0.75rem;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            margin-right: 0.25rem;
-            margin-bottom: 0.25rem;
-            display: inline-block;
-        }
-
-        /* Smooth fade-in on scroll */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ehab Alkhateeb - Cybersecurity Researcher | Deep Learning & Malware</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-color: #0f111a;
+    --text-main: #f0f0f0;
+    --text-muted: #a0a0a0;
+    --primary-color: #3b82f6;
+    --secondary-color: #2563eb;
+    --card-bg: #1f1f2a;
+    --border-color: #2a2a3a;
+    --header-bg-start: #11121c;
+    --header-bg-end: #1c1c2e;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+.theme-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s;
+}
+.theme-card:hover { transform: translateY(-4px); }
+a { color: var(--primary-color); }
+a:hover { color: var(--secondary-color); }
+.header-container {
+    background: linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
+    color: var(--text-main);
+    padding: 4rem 2rem 6rem 2rem;
+    text-align: center;
+}
+h1 { font-size: 2.5rem; font-weight: 600; }
+h2 { font-size: 1.5rem; margin-top: 0.5rem; font-weight: 500; }
+.section-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; border-bottom: 2px solid var(--primary-color); display: inline-block; }
+.tag { background-color: var(--primary-color); color: #fff; font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; margin-right: 0.25rem; margin-bottom: 0.25rem; display: inline-block; }
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="header-container">
-        <h1>Ehab Alkhateeb</h1>
-        <h2>Cybersecurity Researcher | Deep Learning & Malware</h2>
-        <p class="mt-2 text-sm text-gray-300">
-            Ottawa, Canada | <a href="mailto:ehab@example.com">ehab@example.com</a> | <a href="https://www.linkedin.com/in/ehab-alkhateeb" target="_blank">LinkedIn</a>
+<!-- HEADER -->
+<header class="header-container">
+    <h1>Ehab Alkhateeb</h1>
+    <h2>PhD | Postdoctoral Fellow | Cybersecurity Researcher</h2>
+    <p class="mt-2 text-gray-400">
+        Fredericton, NB, Canada | <a href="mailto:ehabalkh@gmail.com">ehabalkh@gmail.com</a> | <a href="https://alkhateeb.github.io" target="_blank">alkhateeb.github.io</a> | <a href="https://www.linkedin.com/in/ehab-alkhateeb-4aba2a108" target="_blank">LinkedIn</a>
+    </p>
+</header>
+
+<main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- SUMMARY -->
+    <section class="fade-in">
+        <h2 class="section-title">Summary</h2>
+        <p>
+            Cybersecurity researcher and Postdoctoral Fellow at the University of New Brunswick (Canadian Institute for Cybersecurity). Expertise in AI- and deep learning–driven malware analysis, packing detection, behavioral analytics, and vulnerability management. PhD in Computer Science with 8+ years of academic–industry collaboration experience (Public Safety Canada, Rogers, Scotiabank, Huawei), translating research into deployable security solutions.
         </p>
-    </header>
+    </section>
 
-    <!-- MAIN CONTENT -->
-    <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
-
-        <!-- SUMMARY -->
-        <section class="fade-in">
-            <h2 class="section-title">Summary</h2>
-            <p>
-                Experienced cybersecurity researcher specializing in malware detection, deep learning, and vulnerability analysis. Skilled in designing AI-driven security frameworks, conducting advanced research, and developing robust solutions for real-time threat detection. Passionate about bridging academic research and industrial applications.
-            </p>
-        </section>
-
-        <!-- EDUCATION -->
-        <section class="fade-in">
-            <h2 class="section-title">Education</h2>
-            <div class="space-y-4">
-                <div class="theme-card">
-                    <h3>MEng in Technology Innovation Management</h3>
-                    <p class="text-sm text-muted">Carleton University, Canada | 2014 - 2015</p>
-                    <p>Specialized in Cybersecurity Architecture and Technology Management. Engineered custom cryptographic algorithms (AES/RSA) for end-to-end encryption services.</p>
-                    <div class="mt-2">
-                        <span class="tag">Security</span>
-                        <span class="tag">System Design</span>
-                        <span class="tag">Research</span>
-                    </div>
-                </div>
-
-                <div class="theme-card">
-                    <h3>PhD in Electrical and Computer Engineering</h3>
-                    <p class="text-sm text-muted">University of Mississippi, USA | 2005 - 2008</p>
-                    <p>Conducted advanced research in wireless systems (MIMO-OFDM). Served as Teaching Assistant for graduate modules on AI: Statistical Analysis, Graph Theory, Coding Theory.</p>
-                    <div class="mt-2">
-                        <span class="tag">Research</span>
-                        <span class="tag">Wireless</span>
-                        <span class="tag">AI</span>
-                    </div>
-                </div>
+    <!-- EXPERIENCE -->
+    <section class="fade-in">
+        <h2 class="section-title">Experience</h2>
+        <div class="space-y-4">
+            <div class="theme-card">
+                <h3>Postdoctoral Fellow</h3>
+                <p class="text-sm text-muted">University of New Brunswick – CIC | 2024–Present</p>
+                <ul class="mt-2 list-disc ml-5">
+                    <li>Canadian Attribution Data Centre (Public Safety Canada): AI/ML-driven endpoint security, malware packing detection using binary-to-image deep learning; static & dynamic analysis; APT hunting; CAPE sandbox with CAPA and MITRE mapping.</li>
+                    <li>Rogers Communications: Vulnerability management integrating NVD, Power BI, LLM-assisted threat intelligence; ML-based behavioral anomaly detection on Fortinet logs.</li>
+                </ul>
             </div>
-        </section>
 
-        <!-- EXPERIENCE -->
-        <section class="fade-in">
-            <h2 class="section-title">Experience</h2>
-            <div class="space-y-4">
-                <div class="theme-card">
-                    <h3>AI Technical Lead</h3>
-                    <p class="text-sm text-muted">Dell Technologies | Ottawa, Canada | 2022 - Present</p>
-                    <p>Spearheads Multi-modal Agentic AI benchmarking initiatives. Architects zero-touch automation by integrating GNN-based Digital Twins and Knowledge Graphs to optimize system reliability and efficiency.</p>
-                    <div class="mt-2">
-                        <span class="tag">AI</span>
-                        <span class="tag">System Design</span>
-                        <span class="tag">Wireless</span>
-                        <span class="tag">Research</span>
-                        <span class="tag">Coding</span>
-                    </div>
-                </div>
-
-                <div class="theme-card">
-                    <h3>Assistant Professor, Data Science</h3>
-                    <p class="text-sm text-muted">Princess Sumaya University for Technology | Amman, Jordan | 2020 - 2022</p>
-                    <p>Directed the founding of the Data Science department; led faculty to design BSc/MSc curricula and strategic partnerships. Represented the department in Jordan National AI Ethics Charter.</p>
-                    <div class="mt-2">
-                        <span class="tag">AI</span>
-                        <span class="tag">Research</span>
-                        <span class="tag">Coding</span>
-                    </div>
-                </div>
+            <div class="theme-card">
+                <h3>Cybersecurity Researcher</h3>
+                <p class="text-sm text-muted">Rogers Communications / CIC | 2021–2024</p>
+                <ul class="mt-2 list-disc ml-5">
+                    <li>Behavioral analytics & insider-threat detection using multi-source logs.</li>
+                    <li>Elasticsearch pipelines, ML anomaly detection models, vulnerability classification and prioritization.</li>
+                </ul>
             </div>
-        </section>
 
-        <!-- PUBLICATIONS -->
-        <section class="fade-in">
-            <h2 class="section-title">Publications & Patents</h2>
-            <div class="space-y-4">
-                <div class="theme-card">
-                    <h3>Dynamic Multi-Agent Framework with Knowledge Graph Profiles</h3>
-                    <p class="text-sm text-muted">Patent App, 2025</p>
-                    <p>Architected a dynamic Agentic AI framework with Knowledge Graph profiles for adaptive, context-aware agent collaboration.</p>
-                    <a href="#">View Details</a>
-                </div>
-                <div class="theme-card">
-                    <h3>GNN-Based Network Digital Twin for O-RAN</h3>
-                    <p class="text-sm text-muted">Patent, 2025</p>
-                    <p>Architected a novel hybrid AI/ML digital twin integrating RNN/GNN models to capture temporal/spatial 5G/6G network dynamics.</p>
-                    <a href="https://drive.google.com/file/d/1ev-WZGXi-4fXuITGhc8YfFmrzaGjzEve/view?usp=sharing" target="_blank">View Patent</a>
-                </div>
+            <div class="theme-card">
+                <h3>Engineer, Intern</h3>
+                <p class="text-sm text-muted">Huawei Technologies Canada | 2021</p>
+                <ul class="mt-2 list-disc ml-5">
+                    <li>Prototyped ML-based malware file classification systems; contributed to scalable ML infrastructure.</li>
+                </ul>
             </div>
-        </section>
 
-    </main>
+            <div class="theme-card">
+                <h3>Cybersecurity Researcher</h3>
+                <p class="text-sm text-muted">Scotiabank / CIC | 2020–2021</p>
+                <ul class="mt-2 list-disc ml-5">
+                    <li>ML-based cyber kill-chain prediction; Random-Forest remediation prioritization; aggregated exploit data from multiple threat databases.</li>
+                </ul>
+            </div>
 
-    <script>
-        // Fade-in on scroll
-        const faders = document.querySelectorAll('.fade-in');
-        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('visible');
-                appearOnScroll.unobserve(entry.target);
-            });
-        }, appearOptions);
-        faders.forEach(fader => appearOnScroll.observe(fader));
-    </script>
+            <div class="theme-card">
+                <h3>IT Officer</h3>
+                <p class="text-sm text-muted">Fakih IVF | UAE | 2016–2019</p>
+                <ul class="mt-2 list-disc ml-5">
+                    <li>Enterprise security risk assessments; SIEM, IDS/IPS, firewall, backup, and endpoint monitoring.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="fade-in">
+        <h2 class="section-title">Education</h2>
+        <div class="space-y-4">
+            <div class="theme-card">
+                <h3>PhD in Computer Science</h3>
+                <p class="text-sm text-muted">University of New Brunswick, Canada | 2020–2024 | GPA: 4.1/4.3</p>
+                <p class="mt-1"><strong>Thesis:</strong> Unmasking Stealthy Threats: Techniques for Identifying and Analyzing Obfuscated Malware</p>
+            </div>
+            <div class="theme-card">
+                <h3>MSc in Computer Science</h3>
+                <p class="text-sm text-muted">Al-Zaytoonah University, Jordan | 2015 | GPA: 87.6/100</p>
+                <p class="mt-1"><strong>Thesis:</strong> Secure Mobile Payment Systems</p>
+            </div>
+            <div class="theme-card">
+                <h3>BSc in Computer Science</h3>
+                <p class="text-sm text-muted">Zarqa University, Jordan | 2012</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="fade-in">
+        <h2 class="section-title">Publications</h2>
+        <p>
+            Peer-reviewed journal and survey publications primarily in malware analysis and AI-driven security research, with additional contributions in cryptography. A complete publication list is available on <a href="https://scholar.google.com/citations?user=iBBlsIkAAAAJ&hl=en" target="_blank">Google Scholar</a>.
+        </p>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section class="fade-in">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="theme-card">
+                <h3>Security</h3>
+                <p>Malware Analysis, Packing Detection, Threat Hunting, APT Analysis, Reverse Engineering</p>
+            </div>
+            <div class="theme-card">
+                <h3>AI/ML</h3>
+                <p>Deep Learning, CNNs, Isolation Forest, TensorFlow, Python</p>
+            </div>
+            <div class="theme-card">
+                <h3>Systems</h3>
+                <p>C/C++, Java, SQL, Windows API, CAPE Sandbox, IDA Pro, x64dbg</p>
+            </div>
+            <div class="theme-card">
+                <h3>Data</h3>
+                <p>Elasticsearch, Power BI, OSINT, Network & Endpoint Logs</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        appearOnScroll.unobserve(entry.target);
+    });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
 
 </body>
 </html>
