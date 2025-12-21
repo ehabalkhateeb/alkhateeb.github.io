@@ -1,216 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ehab Alkhateeb - Cybersecurity Researcher | Deep Learning & Malware</title>
-    <link rel="icon" href="data:,">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': 'var(--primary-color)',
-                        'secondary': 'var(--secondary-color)',
-                        'bg-default': 'var(--bg-color)',
-                        'text-main': 'var(--text-main)',
-                        'text-muted': 'var(--text-muted)',
-                        'card-bg': 'var(--card-bg)',
-                        'border-color': 'var(--border-color)',
-                        'header-bg-start': 'var(--header-bg-start)',
-                        'header-bg-end': 'var(--header-bg-end)',
-                    }
-                }
-            }
-        }
-    </script>
+<title>Ehab Alkhateeb – Cybersecurity Researcher</title>
 
-    <style>
-        :root {
-            --bg-color: #f9fafb;
-            --text-main: #1f2937;
-            --text-muted: #4b5563;
-            --primary-color: #991b1b;
-            --secondary-color: #1e3a8a;
-            --card-bg: #ffffff;
-            --border-color: #e5e7eb;
-            --header-bg-start: #1f2937;
-            --header-bg-end: #0f172a;
-            --header-text: #ffffff;
-            --tag-bg: #f3f4f6;
-            --tag-text: #374151;
-        }
-        .dark-mode {
-            --bg-color: #0f172a;
-            --text-main: #e5e7eb;
-            --text-muted: #9ca3af;
-            --card-bg: #1e293b;
-            --border-color: #334155;
-            --tag-bg: #334155;
-            --tag-text: #e5e7eb;
-        }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            -webkit-font-smoothing: antialiased;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-        .theme-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05),0 2px 4px -2px rgba(0,0,0,0.05);
-            transition: all 0.4s ease;
-        }
-        .header-container {
-            position: relative;
-            background: linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
-            color: var(--header-text);
-            overflow: hidden;
-            padding: 4rem 1rem;
-        }
-        .header-container h1 {
-            border-left: 4px solid var(--primary-color);
-            padding-left: 1rem;
-        }
-        .summary-text {
-            color: var(--text-main);
-            background-color: var(--card-bg);
-            border-left: 4px solid var(--secondary-color);
-        }
-        .mode-toggle {
-            background-color: rgba(255, 255, 255, 0.15);
-            border: none;
-            backdrop-filter: blur(8px);
-            transition: all 0.3s ease;
-            color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        .mode-toggle:hover {
-            background-color: rgba(255,255,255,0.3);
-            transform: scale(1.05);
-        }
-        .tech-tag {
-            font-family: 'JetBrains Mono', monospace;
-            background-color: var(--tag-bg);
-            color: var(--tag-text);
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        .section-header { cursor: pointer; transition: background-color 0.3s ease; }
-        .section-header:hover { background-color: rgba(0,0,0,0.05); }
-        .dark-mode .section-header:hover { background-color: rgba(255,255,255,0.05); }
-        .chevron-icon { transition: transform 0.3s ease; }
-        .collapsed .chevron-icon { transform: rotate(-90deg); }
-        .footer-style { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
-        .security-keyword { color: var(--primary-color); font-weight: 600; }
-        .ai-keyword { color: var(--secondary-color); font-weight: 600; }
-    </style>
+<link rel="icon" href="data:,">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #f9fafb;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --card: #ffffff;
+    --border: #e5e7eb;
+}
+.dark-mode {
+    --bg: #0f172a;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --card: #1e293b;
+    --border: #334155;
+}
+body {
+    font-family: Inter, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+</style>
 </head>
+
 <body>
-    <div id="app" class="min-h-screen">
-        <div class="min-h-screen flex items-center justify-center">
-            <div class="animate-spin rounded-full h-12 w-12" style="border-bottom:4px solid var(--primary-color)"></div>
-        </div>
+<div id="app" class="min-h-screen flex items-center justify-center">
+    <div class="animate-spin h-10 w-10 border-4 border-gray-300 border-t-gray-800 rounded-full"></div>
+</div>
+
+<script>
+const CV_DATA = {
+    lastUpdated: "DEC-2025",
+    personalInfo: {
+        name: "Ehab Alkhateeb",
+        title: "Cybersecurity Researcher | Deep Learning & Malware Analysis",
+        email: "ehabalkh@gmail.com",
+        location: "Fredericton, NB, Canada",
+        summary: `Cybersecurity researcher and postdoctoral fellow at the University of New Brunswick’s Canadian Institute for Cybersecurity. 
+        Ph.D. in Computer Science specializing in deep learning–based malware detection using binary-to-image representations.
+        Over eight years of combined academic and industry experience in malware analysis, vulnerability management,
+        behavioral analytics, and threat intelligence.`
+    }
+};
+
+/* ---------------- RENDER FUNCTIONS ---------------- */
+
+const renderPersonalInfo = (d) => `
+<section class="card p-8 mb-6">
+    <h1 class="text-3xl font-bold">${d.personalInfo.name}</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-400 mt-1">${d.personalInfo.title}</p>
+
+    <div class="mt-4 text-sm text-gray-600 dark:text-gray-400 space-y-1">
+        <p><i class="fa-solid fa-location-dot mr-2"></i>${d.personalInfo.location}</p>
+        <p><i class="fa-solid fa-envelope mr-2"></i>${d.personalInfo.email}</p>
     </div>
+</section>
+`;
 
-    <script>
-        let appData = null;
-        let isDarkMode = localStorage.getItem('theme') === 'dark';
+const renderSummary = (d) => `
+<section class="card p-8 mb-6">
+    <h2 class="text-xl font-semibold mb-3">Professional Summary</h2>
+    <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+        ${d.personalInfo.summary}
+    </p>
+</section>
+`;
 
-        const CV_DATA = {
-            "lastUpdated": "DEC-2025",
-            "personalInfo": {
-                "name": "Ehab Alkhateeb",
-                "title": "Cybersecurity Researcher | Deep Learning & Malware Analysis",
-                "email": "ehabalkh@gmail.com",
-                "location": "Fredericton, NB, Canada",
-                "phone": "+1 506 292 3023",
-                "linkedin": "N/A",
-                "googleScholar": "https://scholar.google.com/citations?user=iBBlsIkAAAAJ&hl=en",
-                "summary": "I am a cybersecurity researcher and postdoctoral fellow at the University of New Brunswick’s Canadian Institute for Cybersecurity, working at the intersection of artificial intelligence, deep learning, and malware analysis. I earned my Ph.D. in Computer Science from the University of New Brunswick, focusing on deep learning–based malware detection using binary-to-image representations, and bring over eight years of combined academic and industry experience through collaborations with Public Safety Canada, Rogers Communications, Scotiabank, Huawei, and NMC Healthcare. My work spans AI- and deep learning–driven malware analysis, vulnerability management, behavioral analytics, and threat attribution, bridging foundational research with real-world cybersecurity deployment.",
-                "citations": 78,
-                "hIndex": 4,
-                "i10Index": 3
-            },
-            // ... rest of education, experience, publications, skills (unchanged)
-        };
+/* ---------------- APP RENDER ---------------- */
 
-        const formatNumber = (num) => num ? num.toLocaleString() : 'N/A';
+const renderApp = () => {
+    const html = `
+    <main class="max-w-4xl mx-auto px-4 py-10">
+        ${renderPersonalInfo(CV_DATA)}
+        ${renderSummary(CV_DATA)}
+    </main>
 
-        const getIcon = (key) => {
-            switch (key.toLowerCase()) {
-                case 'reverse engineering': case 'malware analysis': return '<i class="fa-solid fa-bug text-primary"></i>';
-                case 'ai/ml': case 'deep learning': return '<i class="fa-solid fa-microchip text-secondary"></i>';
-                case 'vulnerability management': case 'security': return '<i class="fa-solid fa-shield-halved text-primary"></i>';
-                case 'threat hunting': case 'apt': return '<i class="fa-solid fa-user-secret text-primary"></i>';
-                case 'cryptography': return '<i class="fa-solid fa-key text-secondary"></i>';
-                case 'research': return '<i class="fa-solid fa-flask text-secondary"></i>';
-                case 'conference': return '<i class="fa-solid fa-users text-primary"></i>';
-                case 'journal': return '<i class="fa-solid fa-book text-primary"></i>';
-                default: return '<i class="fa-solid fa-tag text-text-muted"></i>';
-            }
-        };
+    <footer class="text-center text-sm text-gray-500 py-6 border-t">
+        © ${new Date().getFullYear()} ${CV_DATA.personalInfo.name} · Last Updated: ${CV_DATA.lastUpdated}
+    </footer>
+    `;
 
-        const renderTags = (tags) => tags.map(tag => `<span class="tech-tag inline-block px-3 py-1 rounded mr-2 mb-2 hover:bg-primary/20 transition">${tag}</span>`).join('');
+    document.getElementById("app").innerHTML = html;
+};
 
-        const highlightKeywords = (text) => {
-            const securityKeywords = ["cybersecurity","malware analysis","packing detection","APT","vulnerability management","threat attribution","threat intel","zero-day","Insider Threat","Cyber Kill Chain","SIEM","firewalls"];
-            const aiKeywords = ["artificial intelligence","deep learning","ML","AI","LLMs","Google Gemini","Isolation Forest","Random Forest"];
-            let highlightedText = text;
-            securityKeywords.forEach(kw=>{highlightedText=highlightedText.replace(new RegExp(`\\b(${kw})\\b`,'gi'),'<span class="security-keyword">$&</span>');});
-            aiKeywords.forEach(kw=>{highlightedText=highlightedText.replace(new RegExp(`\\b(${kw})\\b`,'gi'),'<span class="ai-keyword">$&</span>');});
-            return highlightedText;
-        };
+window.onload = renderApp;
+</script>
 
-        // --- All render functions (renderPersonalInfo, renderExperience, renderEducation, renderPublications, renderSkills, etc.) ---
-        // They remain mostly unchanged. Just ensure CV_DATA.googleScholar is used as string.
-
-        const toggleTheme = () => {
-            isDarkMode = !isDarkMode;
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-            document.body.classList.toggle('dark-mode', isDarkMode);
-            const toggleButton = document.getElementById('mode-toggle');
-            if(toggleButton) toggleButton.innerHTML = isDarkMode ? '<i class="fa-solid fa-moon text-xl"></i>' : '<i class="fa-solid fa-sun text-xl"></i>';
-        };
-
-        const toggleSection = (event) => {
-            const header = event.currentTarget;
-            const targetId = header.getAttribute('data-target');
-            const content = document.getElementById(targetId);
-            content.classList.toggle('hidden');
-            header.classList.toggle('collapsed');
-        };
-
-        const setupEventListeners = () => {
-            const toggleButton = document.getElementById('mode-toggle');
-            if(toggleButton) toggleButton.addEventListener('click', toggleTheme);
-            document.querySelectorAll('.section-header').forEach(header => header.addEventListener('click', toggleSection));
-        };
-
-        const renderApp = () => {
-            appData = CV_DATA;
-            const content = `
-                <main class="pb-10">
-                    <!-- personal info, experience, skills, education, publications -->
-                </main>
-                <footer class="text-center py-6 border-t border-border-color mt-10">
-                    <p class="text-sm text-text-muted footer-style">
-                        Coded by AI for Ehab Alkhateeb. Data extracted from CV. Last Updated: ${appData.lastUpdated}
-                    </p>
-                </footer>
-            `;
-            document.getElementById('app').innerHTML = content;
-            setupEventListeners();
-            document.body.classList.toggle('dark-mode', isDarkMode);
-        };
-
-        window.onload = renderApp;
-    </script>
 </body>
 </html>
