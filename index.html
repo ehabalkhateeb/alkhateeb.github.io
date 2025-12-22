@@ -1,238 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ehab Alkhateeb - Cybersecurity Researcher | Deep Learning & Malware</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-    --bg-color: #0f111a;
-    --text-main: #f0f0f0;
-    --text-muted: #a0a0a0;
-    --primary-color: #3b82f6;
-    --secondary-color: #2563eb;
-    --card-bg: #1f1f2a;
-    --border-color: #2a2a3a;
-    --header-bg-start: #11121c;
-    --header-bg-end: #1c1c2e;
-}
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-}
-.theme-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    transition: transform 0.2s;
-}
-.theme-card:hover { transform: translateY(-4px); }
-a { color: var(--primary-color); }
-a:hover { color: var(--secondary-color); }
-.header-container {
-    background: linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
-    color: var(--text-main);
-    padding: 4rem 2rem 6rem 2rem;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-.header-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 9999px;
-    background-color: #333;
-    border: 2px solid var(--primary-color);
-}
-h1 { font-size: 3rem; font-weight: 700; } /* Bigger & bold */
-h2 { font-size: 1.5rem; margin-top: 0.5rem; font-weight: 500; }
-.section-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; border-bottom: 2px solid var(--primary-color); display: inline-block; }
-.tab-button { 
-    padding: 0.5rem 1rem; 
-    cursor: pointer; 
-    border-radius: 8px; 
-    margin-right: 0.5rem; 
-    border: 1px solid var(--border-color);
-    background-color: var(--card-bg);
-}
-.tab-button.active {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehab Alkhateeb | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f111a;
+            --text-main: #f0f0f0;
+            --primary-color: #3b82f6;
+            --card-bg: #1f1f2a;
+            --border-color: #2a2a3a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideRight {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .animate-header { animation: slideDown 0.8s ease-out forwards; }
+        .animate-tabs { opacity: 0; animation: slideRight 0.6s ease-out 0.4s forwards; }
+        .animate-content { opacity: 0; animation: slideDown 0.6s ease-out 0.8s forwards; }
+
+        .header-container {
+            background: linear-gradient(135deg, #11121c 0%, #1c1c2e 100%);
+            padding: 4rem 2rem 6rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 9999px;
+            border: 4px solid var(--primary-color);
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .tab-position-adjustment {
+            margin-top: -3.5rem; 
+            position: relative;
+            z-index: 50;
+        }
+
+        .tab-button-main { 
+            padding: 1rem 2.5rem; 
+            font-weight: 600;
+            cursor: pointer; 
+            border-radius: 0px; 
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-button-main:hover { border-color: var(--primary-color); background: #252535; }
+
+        .tab-button-main.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+        }
+
+        .theme-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .theme-card:hover { transform: translateY(-4px); border-color: var(--primary-color); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
+
+        .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; border-left: 4px solid var(--primary-color); padding-left: 1rem; }
+        .skill-tag { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; color: #93c5fd; }
+        
+        .hidden { display: none; }
+        .fade-in { opacity: 0; transform: translateY(10px); transition: 0.4s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
 <body>
 
-<header class="header-container">
-    <div class="header-photo" id="photo-placeholder">
-        <img src="Imgs/1763730176743.jpg" alt="${data.personalInfo.name}" class="${imgSizeClass} rounded-full shadow-2xl border-4 border-white/20 shrink-0 object-cover bg-white transition-all duration-500" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=IA&background=0D8ABC&color=fff';"/>
+<header class="header-container animate-header">
+    <div class="header-photo">
+        <img src="Imgs/1763730176743.jpg" alt="Ehab Alkhateeb" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ehab+Alkhateeb&background=3b82f6&color=fff';"/>
     </div>
-
     <div>
-        <h1>Ehab Alkhateeb</h1>
-        <h2>PhD | Postdoctoral Fellow | Cybersecurity Researcher</h2>
-        <p class="mt-2 text-gray-400">
-            Fredericton, NB, Canada |
-            <a href="mailto:ehabalkh@gmail.com">ehabalkh@gmail.com</a> |
-            <a href="https://ehabalkhateeb.github.io" target="_blank">ehabalkhateeb.github.io</a> |
-            <a href="https://www.linkedin.com/in/ehab-alkhateeb-4aba2a108" target="_blank">LinkedIn</a>
+        <h1 class="text-5xl font-bold tracking-tight">Ehab Alkhateeb</h1>
+        <h2 class="text-xl text-blue-400 mt-2 font-medium">PhD | Postdoctoral Fellow</h2>
+        <p class="mt-4 text-gray-400">
+            <span class="flex items-center gap-2">📍 Cybersecurity Researcher | Fredericton, NB, Canada</span>
+            <span class="flex items-center gap-4 mt-1">
+                <a href="mailto:ehabalkh@gmail.com" class="text-blue-400 hover:text-blue-300 transition-colors">   ehabalkh@gmail.com</a>
+               
+               
+            </span>
         </p>
     </div>
 </header>
 
-
-<!-- TABS NAVIGATION -->
-<div class="max-w-5xl mx-auto px-4 mt-6 flex flex-wrap gap-2">
-    <button class="tab-button active" data-tab="summary">Summary</button>
-    <button class="tab-button" data-tab="experience">Experience</button>
-    <button class="tab-button" data-tab="education">Education</button>
-    <button class="tab-button" data-tab="publications">Publications</button>
-    <button class="tab-button" data-tab="skills">Skills</button>
+<div class="max-w-5xl mx-auto px-4 tab-position-adjustment flex flex-wrap gap-4 animate-tabs" id="main-nav">
+    <button class="tab-button-main active" data-tab="cv">CURRICULUM VITAE</button>
+    <button class="tab-button-main" data-tab="professional-activities">ACTIVITIES</button>
+    <button class="tab-button-main" data-tab="links">RESOURCES</button>
 </div>
 
-<!-- MAIN CONTENT -->
-<main class="max-w-5xl mx-auto px-4 py-8">
+<main class="max-w-5xl mx-auto px-4 py-12 animate-content">
 
-    <!-- SUMMARY -->
-    <section class="fade-in tab-content" id="summary">
-        <h2 class="section-title">Summary</h2>
-        <p>
-            Cybersecurity researcher and Postdoctoral Fellow at the University of New Brunswick (Canadian Institute for Cybersecurity). Expertise in AI- and deep learning–driven malware analysis, packing detection, behavioral analytics, and vulnerability management. PhD in Computer Science with 8+ years of academic–industry collaboration experience (Public Safety Canada, Rogers, Scotiabank, Huawei), translating research into deployable security solutions.
-        </p>
-    </section>
+    <section class="tab-content" id="cv">
+        <div class="flex flex-wrap gap-1 mb-8 bg-slate-900/80 p-1 border border-white/5 rounded-lg" id="cv-nav">
+            <button class="px-5 py-2 rounded-md transition-all active bg-blue-600 text-white" data-subtab="summary">Summary</button>
+            <button class="px-5 py-2 rounded-md transition-all hover:bg-white/5" data-subtab="experience">Experience</button>
+            <button class="px-5 py-2 rounded-md transition-all hover:bg-white/5" data-subtab="education">Education</button>
+            <button class="px-5 py-2 rounded-md transition-all hover:bg-white/5" data-subtab="publications">Publications</button>
+            <button class="px-5 py-2 rounded-md transition-all hover:bg-white/5" data-subtab="skills">Skills</button>
+        </div>
 
-    <!-- EXPERIENCE -->
-    <section class="fade-in tab-content hidden" id="experience">
-        <h2 class="section-title">Experience</h2>
-        <div class="space-y-4">
-            <div class="theme-card">
-                <h3>Postdoctoral Fellow</h3>
-                <p class="text-sm text-muted">University of New Brunswick – CIC | 2024–Present</p>
-                <ul class="mt-2 list-disc ml-5">
-                    <li>Canadian Attribution Data Centre (Public Safety Canada): AI/ML-driven solutions; static & dynamic analysis; APT hunting; CAPE sandbox; CAPA and MITRE mapping.</li>
-                    <li>Rogers Communications: Vulnerability management integrating NVD, Power BI, LLM-assisted threat intelligence; ML-based behavioral anomaly detection on Fortinet logs.</li>
-                </ul>
+        <div id="cv-content-area">
+            <div class="sub-content visible fade-in" id="summary">
+                <h3 class="section-title">Summary</h3>
+                <p class="text-xl leading-relaxed text-gray-300 font-light">
+                    Cybersecurity researcher and Postdoctoral Fellow at the University of New Brunswick (Canadian Institute for Cybersecurity). Expertise in AI- and deep learning–driven malware analysis, packing detection, behavioral analytics, and vulnerability management. PhD in Computer Science with 8+ years of academic–industry collaboration experience (Public Safety Canada, Rogers, Scotiabank, Huawei), translating research into deployable security solutions.
+                </p>
             </div>
-            <div class="theme-card">
-                <h3>Cybersecurity Researcher</h3>
-                <p class="text-sm text-muted">Rogers Communications / CIC | 2021–2024</p>
-                <ul class="mt-2 list-disc ml-5">
-                    <li>Behavioral analytics & insider-threat detection using multi-source logs.</li>
-                    <li>Elasticsearch pipelines, ML anomaly detection models, vulnerability classification and prioritization.</li>
-                </ul>
+
+            <div class="sub-content hidden fade-in" id="experience">
+                <h3 class="section-title">Professional Experience</h3>
+                <div class="theme-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white">Postdoctoral Fellow</h4>
+                        <span class="bg-blue-900/30 text-blue-400 px-3 py-1 text-xs rounded-full font-bold">2024 – PRESENT</span>
+                    </div>
+                    <p class="text-blue-400 mb-4">University of New Brunswick -- CIC | Canada</p>
+                    <div class="space-y-4 text-gray-300">
+                        <p><strong>Public Safety Canada:</strong> AI/ML-driven solutions; static and dynamic malware analysis; APT hunting; custom CAPE sandbox; CAPA integration and MITRE mapping.</p>
+                        <p><strong>Rogers Communications:</strong> Vulnerability management platform integrating NVD and LLM-assisted threat intelligence; ML-based behavioral anomaly detection on Fortinet logs (Isolation Forest, Azure ML).</p>
+                    </div>
+                </div>
+
+                <div class="theme-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white">Cybersecurity Researcher</h4>
+                        <span class="text-gray-500 text-sm font-bold">2021 – 2024</span>
+                    </div>
+                    <p class="text-blue-400 mb-2">Rogers Communications / CIC | Canada</p>
+                    <p class="text-gray-300">Behavioral analytics and insider-threat detection using multi-source logs; Elasticsearch-based pipelines; ML models for anomaly detection; vulnerability classification and prioritization.</p>
+                </div>
+
+                <div class="theme-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white">Engineer Intern</h4>
+                        <span class="text-gray-500 text-sm font-bold">2021</span>
+                    </div>
+                    <p class="text-blue-400 mb-2">Huawei Technologies Canada</p>
+                    <p class="text-gray-300">Prototyped machine-learning–based malware file classification systems and contributed to scalable ML infrastructure development.</p>
+                </div>
+
+                <div class="theme-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white">Cybersecurity Researcher</h4>
+                        <span class="text-gray-500 text-sm font-bold">2020 – 2021</span>
+                    </div>
+                    <p class="text-blue-400 mb-2">Scotiabank / CIC | Canada</p>
+                    <p class="text-gray-300">ML-based cyber kill-chain prediction; Random-Forest remediation prioritization; exploit data aggregation from multiple threat databases.</p>
+                </div>
+
+                <div class="theme-card">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold text-white">IT Officer</h4>
+                        <span class="text-gray-500 text-sm font-bold">2016 – 2019</span>
+                    </div>
+                    <p class="text-blue-400 mb-2">Fakih IVF | UAE</p>
+                    <p class="text-gray-300">Enterprise security risk assessments; implementation of security controls; SIEM, IDS/IPS, firewall, and endpoint monitoring.</p>
+                </div>
             </div>
-            <div class="theme-card">
-                <h3>Engineer, Intern</h3>
-                <p class="text-sm text-muted">Huawei Technologies Canada | 2021</p>
-                <ul class="mt-2 list-disc ml-5">
-                    <li>Prototyped ML-based malware file classification systems; contributed to scalable ML infrastructure.</li>
-                </ul>
+
+            <div class="sub-content hidden fade-in" id="education">
+                <h3 class="section-title">Education</h3>
+                <div class="theme-card border-l-4 border-l-blue-600">
+                    <h4 class="text-xl font-bold text-white">PhD in Computer Science</h4>
+                    <p class="text-blue-400">University of New Brunswick, Canada | 2020 – 2024</p>
+                    <p class="text-sm text-gray-400 mt-1">GPA: 4.1 / 4.3</p>
+                    <p class="mt-2 text-gray-300 italic">Thesis: Unmasking Stealthy Threats: Techniques for Identifying and Analyzing Obfuscated Malware</p>
+                </div>
+                <div class="theme-card">
+                    <h4 class="text-xl font-bold text-white">MSc in Computer Science</h4>
+                    <p class="text-blue-400">Al-Zaytoonah University, Jordan | 2015</p>
+                    <p class="text-sm text-gray-400 mt-1">GPA: 87.6 / 100</p>
+                    <p class="mt-2 text-gray-300 italic">Thesis: An Improved Approach for Secured Mobile Payment System Based on Public-Key Cryptography</p>
+                </div>
+                <div class="theme-card">
+                    <h4 class="text-xl font-bold text-white">BSc in Computer Science</h4>
+                    <p class="text-blue-400">Zarqa University, Jordan | 2012</p>
+                </div>
             </div>
-            <div class="theme-card">
-                <h3>Cybersecurity Researcher</h3>
-                <p class="text-sm text-muted">Scotiabank / CIC | 2020–2021</p>
-                <ul class="mt-2 list-disc ml-5">
-                    <li>ML-based cyber kill-chain prediction; Random-Forest remediation prioritization; aggregated exploit data from multiple threat databases.</li>
-                </ul>
+
+            <div class="sub-content hidden fade-in" id="skills">
+                <h3 class="section-title">Technical Expertise</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="theme-card">
+                        <h4 class="text-blue-400 font-bold mb-3">SECURITY</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Malware Analysis</span><span class="skill-tag">Packing Detection</span>
+                            <span class="skill-tag">Threat Hunting</span><span class="skill-tag">APT Analysis</span>
+                            <span class="skill-tag">Reverse Engineering</span><span class="skill-tag">MITRE ATT&CK</span>
+                        </div>
+                    </div>
+                    <div class="theme-card">
+                        <h4 class="text-blue-400 font-bold mb-3">AI & DATA</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Deep Learning</span><span class="skill-tag">CNNs</span>
+                            <span class="skill-tag">TensorFlow</span><span class="skill-tag">Isolation Forest</span>
+                            <span class="skill-tag">Python</span><span class="skill-tag">Elasticsearch</span>
+                            <span class="skill-tag">Power BI</span><span class="skill-tag">Azure ML</span>
+                        </div>
+                    </div>
+                    <div class="theme-card">
+                        <h4 class="text-blue-400 font-bold mb-3">SYSTEMS & TOOLS</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">C/C++</span><span class="skill-tag">Java</span>
+                            <span class="skill-tag">SQL</span><span class="skill-tag">Windows API</span>
+                            <span class="skill-tag">CAPE Sandbox</span><span class="skill-tag">IDA Pro</span>
+                            <span class="skill-tag">x64dbg</span><span class="skill-tag">Wireshark</span>
+                        </div>
+                    </div>
+                    <div class="theme-card">
+                        <h4 class="text-blue-400 font-bold mb-3">NETWORKING & LOGS</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Endpoint Logs</span><span class="skill-tag">Network Logs</span>
+                            <span class="skill-tag">OSINT</span><span class="skill-tag">SIEM/IDS/IPS</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="theme-card">
-                <h3>IT Officer</h3>
-                <p class="text-sm text-muted">Fakih IVF | UAE | 2016–2019</p>
-                <ul class="mt-2 list-disc ml-5">
-                    <li>Enterprise security risk assessments; SIEM, IDS/IPS, firewall, backup, and endpoint monitoring.</li>
-                </ul>
+
+            <div class="sub-content hidden fade-in" id="publications">
+                <h3 class="section-title">Publications</h3>
+                <div class="theme-card">
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Peer-reviewed journal and survey publications primarily in <strong>malware analysis</strong> and <strong>AI-driven security research</strong>, with additional contributions in cryptography.
+                    </p>
+                    <div class="flex flex-col items-center py-6 border-t border-gray-700">
+                        <p class="text-sm text-gray-400 mb-4 text-center">For a complete and up-to-date list of research papers:</p>
+                        <a href="https://scholar.google.com/citations?user=iBBlsIkAAAAJ" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-bold transition-all shadow-lg hover:shadow-blue-500/20">View Google Scholar Profile</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section class="fade-in tab-content hidden" id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="space-y-4">
-            <div class="theme-card">
-                <h3>PhD in Computer Science</h3>
-                <p class="text-sm text-muted">University of New Brunswick, Canada | 2020–2024 | GPA: 4.1/4.3</p>
-                <p class="mt-1"><strong>Thesis:</strong> Unmasking Stealthy Threats: Techniques for Identifying and Analyzing Obfuscated Malware</p>
-            </div>
-            <div class="theme-card">
-                <h3>MSc in Computer Science</h3>
-                <p class="text-sm text-muted">Al-Zaytoonah University, Jordan | 2015 | GPA: 87.6/100</p>
-                <p class="mt-1"><strong>Thesis:</strong> Secure Mobile Payment Systems</p>
-            </div>
-            <div class="theme-card">
-                <h3>BSc in Computer Science</h3>
-                <p class="text-sm text-muted">Zarqa University, Jordan | 2012</p>
-            </div>
+    <section class="tab-content hidden" id="professional-activities">
+        <h2 class="section-title">Professional Activities</h2>
+        <div class="theme-card">
+            <ul class="space-y-4 text-gray-300">
+                <li class="flex items-start gap-3">
+                    <span class="text-blue-500 mt-1">✔</span> Peer reviewer for international cybersecurity journals.
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-blue-500 mt-1">✔</span> Research collaboration with the Canadian Institute for Cybersecurity (CIC).
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-blue-500 mt-1">✔</span> Translation of research into deployable industry security solutions.
+                </li>
+            </ul>
         </div>
     </section>
 
-    <!-- PUBLICATIONS -->
-    <section class="fade-in tab-content hidden" id="publications">
-        <h2 class="section-title">Publications</h2>
-        <p>
-            Peer-reviewed journal and survey publications primarily in malware analysis and AI-driven security research, with additional contributions in cryptography. A complete publication list is available on <a href="https://scholar.google.com/citations?user=iBBlsIkAAAAJ&hl=en" target="_blank">Google Scholar</a>.
-        </p>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="fade-in tab-content hidden" id="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="theme-card">
-                <h3>Security</h3>
-                <p>Malware Analysis, Packing Detection, Threat Hunting, APT Analysis, Reverse Engineering</p>
-            </div>
-            <div class="theme-card">
-                <h3>AI/ML</h3>
-                <p>Deep Learning, CNNs, Isolation Forest, TensorFlow, Python</p>
-            </div>
-            <div class="theme-card">
-                <h3>Systems</h3>
-                <p>C/C++, Java, SQL, Windows API, CAPE Sandbox, IDA Pro, x64dbg</p>
-            </div>
-            <div class="theme-card">
-                <h3>Data</h3>
-                <p>Elasticsearch, Power BI, OSINT, Network & Endpoint Logs</p>
-            </div>
+    <section class="tab-content hidden" id="links">
+        <h2 class="section-title">Connect & Resources</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="https://github.com/ehabalkhateeb" class="theme-card flex flex-col items-center group">
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">📁</div>
+                <span class="font-bold text-lg">GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/ehab-alkhateeb-4aba2a108" class="theme-card flex flex-col items-center group">
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">💼</div>
+                <span class="font-bold text-lg">LinkedIn</span>
+            </a>
+            <a href="https://scholar.google.com/citations?user=iBBlsIkAAAAJ" class="theme-card flex flex-col items-center group">
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🎓</div>
+                <span class="font-bold text-lg">Google Scholar</span>
+            </a>
         </div>
     </section>
-
 </main>
 
 <script>
-// Fade-in animation
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        appearOnScroll.unobserve(entry.target);
-    });
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
+    // Tab Switching Logic
+    const mainButtons = document.querySelectorAll('#main-nav .tab-button-main');
+    const mainSections = document.querySelectorAll('.tab-content');
 
-// Tabs functionality
-const tabs = document.querySelectorAll('.tab-button');
-const tabContents = document.querySelectorAll('.tab-content');
-
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const target = tab.getAttribute('data-tab');
-        tabContents.forEach(content => content.classList.add('hidden'));
-        document.getElementById(target).classList.remove('hidden');
+    mainButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            mainButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const target = btn.getAttribute('data-tab');
+            mainSections.forEach(s => s.classList.add('hidden'));
+            document.getElementById(target).classList.remove('hidden');
+        });
     });
-});
+
+    // Sub-tab Logic
+    const cvButtons = document.querySelectorAll('#cv-nav button');
+    const cvSubSections = document.querySelectorAll('.sub-content');
+
+    cvButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            cvButtons.forEach(b => b.classList.remove('bg-blue-600', 'text-white'));
+            btn.classList.add('bg-blue-600', 'text-white');
+            const target = btn.getAttribute('data-subtab');
+            cvSubSections.forEach(c => {
+                c.classList.add('hidden');
+                c.classList.remove('visible');
+            });
+            const activeSub = document.getElementById(target);
+            activeSub.classList.remove('hidden');
+            setTimeout(() => activeSub.classList.add('visible'), 50);
+        });
+    });
 </script>
 
 </body>
