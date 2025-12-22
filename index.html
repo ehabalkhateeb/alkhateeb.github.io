@@ -41,7 +41,7 @@
 
         .header-container {
             background: linear-gradient(135deg, #11121c 0%, #1c1c2e 100%);
-            padding: 4rem 2rem 6rem 2rem;
+            padding: 3rem 2rem 5rem 2rem; /* Adjusted from 4rem/6rem */
             display: flex;
             align-items: center;
             gap: 2rem;
@@ -49,22 +49,23 @@
         }
 
         .header-photo {
-            width: 140px;
-            height: 140px;
+            width: 120px; /* Adjusted from 140px */
+            height: 120px; /* Adjusted from 140px */
             border-radius: 9999px;
             border: 4px solid var(--primary-color);
             overflow: hidden;
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            flex-shrink: 0;
         }
 
         .tab-position-adjustment {
-            margin-top: -3.5rem; 
+            margin-top: -2.5rem; /* Adjusted from -3.5rem */
             position: relative;
             z-index: 50;
         }
 
         .tab-button-main { 
-            padding: 1rem 2.5rem; 
+            padding: 0.75rem 2rem; /* Adjusted from 1rem 2.5rem */
             font-weight: 600;
             cursor: pointer; 
             border-radius: 0px; 
@@ -92,7 +93,7 @@
         }
         .theme-card:hover { transform: translateY(-4px); border-color: var(--primary-color); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
 
-        .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; border-left: 4px solid var(--primary-color); padding-left: 1rem; }
+        .section-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; border-left: 4px solid var(--primary-color); padding-left: 1rem; }
         .skill-tag { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; color: #93c5fd; }
         
         .hidden { display: none; }
@@ -107,26 +108,24 @@
         <img src="Imgs/1763730176743.jpg" alt="Ehab Alkhateeb" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ehab+Alkhateeb&background=3b82f6&color=fff';"/>
     </div>
     <div>
-        <h1 class="text-5xl font-bold tracking-tight">Ehab Alkhateeb</h1>
-        <h2 class="text-xl text-blue-400 mt-2 font-medium">PhD | Postdoctoral Fellow</h2>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Ehab Alkhateeb</h1>
+        <h2 class="text-lg text-blue-400 mt-2 font-medium">PhD | Postdoctoral Fellow</h2>
         <p class="mt-4 text-gray-400">
             <span class="flex items-center gap-2">📍 Cybersecurity Researcher | Fredericton, NB, Canada</span>
             <span class="flex items-center gap-4 mt-1">
-                <a href="mailto:ehabalkh@gmail.com" class="text-blue-400 hover:text-blue-300 transition-colors">   ehabalkh@gmail.com</a>
-               
-               
+                <a href="mailto:ehabalkh@gmail.com" class="text-blue-400 hover:text-blue-300 transition-colors">ehabalkh@gmail.com</a>
             </span>
         </p>
     </div>
 </header>
 
-<div class="max-w-5xl mx-auto px-4 tab-position-adjustment flex flex-wrap gap-4 animate-tabs" id="main-nav">
+<div class="max-w-4xl mx-auto px-4 tab-position-adjustment flex flex-wrap gap-4 animate-tabs" id="main-nav">
     <button class="tab-button-main active" data-tab="cv">CURRICULUM VITAE</button>
     <button class="tab-button-main" data-tab="professional-activities">ACTIVITIES</button>
     <button class="tab-button-main" data-tab="links">RESOURCES</button>
 </div>
 
-<main class="max-w-5xl mx-auto px-4 py-12 animate-content">
+<main class="max-w-4xl mx-auto px-4 py-12 animate-content">
 
     <section class="tab-content" id="cv">
         <div class="flex flex-wrap gap-1 mb-8 bg-slate-900/80 p-1 border border-white/5 rounded-lg" id="cv-nav">
@@ -140,7 +139,7 @@
         <div id="cv-content-area">
             <div class="sub-content visible fade-in" id="summary">
                 <h3 class="section-title">Summary</h3>
-                <p class="text-xl leading-relaxed text-gray-300 font-light">
+                <p class="text-lg leading-relaxed text-gray-300 font-light">
                     Cybersecurity researcher and Postdoctoral Fellow at the University of New Brunswick (Canadian Institute for Cybersecurity). Expertise in AI- and deep learning–driven malware analysis, packing detection, behavioral analytics, and vulnerability management. PhD in Computer Science with 8+ years of academic–industry collaboration experience (Public Safety Canada, Rogers, Scotiabank, Huawei), translating research into deployable security solutions.
                 </p>
             </div>
@@ -153,7 +152,7 @@
                         <span class="bg-blue-900/30 text-blue-400 px-3 py-1 text-xs rounded-full font-bold">2024 – PRESENT</span>
                     </div>
                     <p class="text-blue-400 mb-4">University of New Brunswick -- CIC | Canada</p>
-                    <div class="space-y-4 text-gray-300">
+                    <div class="space-y-4 text-gray-300 text-sm">
                         <p><strong>Public Safety Canada:</strong> AI/ML-driven solutions; static and dynamic malware analysis; APT hunting; custom CAPE sandbox; CAPA integration and MITRE mapping.</p>
                         <p><strong>Rogers Communications:</strong> Vulnerability management platform integrating NVD and LLM-assisted threat intelligence; ML-based behavioral anomaly detection on Fortinet logs (Isolation Forest, Azure ML).</p>
                     </div>
@@ -164,8 +163,8 @@
                         <h4 class="text-xl font-bold text-white">Cybersecurity Researcher</h4>
                         <span class="text-gray-500 text-sm font-bold">2021 – 2024</span>
                     </div>
-                    <p class="text-blue-400 mb-2">Rogers Communications / CIC | Canada</p>
-                    <p class="text-gray-300">Behavioral analytics and insider-threat detection using multi-source logs; Elasticsearch-based pipelines; ML models for anomaly detection; vulnerability classification and prioritization.</p>
+                    <p class="text-blue-400 mb-2 text-sm">Rogers Communications / CIC | Canada</p>
+                    <p class="text-gray-300 text-sm">Behavioral analytics and insider-threat detection using multi-source logs; Elasticsearch-based pipelines; ML models for anomaly detection; vulnerability classification and prioritization.</p>
                 </div>
 
                 <div class="theme-card">
@@ -173,8 +172,8 @@
                         <h4 class="text-xl font-bold text-white">Engineer Intern</h4>
                         <span class="text-gray-500 text-sm font-bold">2021</span>
                     </div>
-                    <p class="text-blue-400 mb-2">Huawei Technologies Canada</p>
-                    <p class="text-gray-300">Prototyped machine-learning–based malware file classification systems and contributed to scalable ML infrastructure development.</p>
+                    <p class="text-blue-400 mb-2 text-sm">Huawei Technologies Canada</p>
+                    <p class="text-gray-300 text-sm">Prototyped machine-learning–based malware file classification systems and contributed to scalable ML infrastructure development.</p>
                 </div>
 
                 <div class="theme-card">
@@ -182,8 +181,8 @@
                         <h4 class="text-xl font-bold text-white">Cybersecurity Researcher</h4>
                         <span class="text-gray-500 text-sm font-bold">2020 – 2021</span>
                     </div>
-                    <p class="text-blue-400 mb-2">Scotiabank / CIC | Canada</p>
-                    <p class="text-gray-300">ML-based cyber kill-chain prediction; Random-Forest remediation prioritization; exploit data aggregation from multiple threat databases.</p>
+                    <p class="text-blue-400 mb-2 text-sm">Scotiabank / CIC | Canada</p>
+                    <p class="text-gray-300 text-sm">ML-based cyber kill-chain prediction; Random-Forest remediation prioritization; exploit data aggregation from multiple threat databases.</p>
                 </div>
 
                 <div class="theme-card">
@@ -191,8 +190,8 @@
                         <h4 class="text-xl font-bold text-white">IT Officer</h4>
                         <span class="text-gray-500 text-sm font-bold">2016 – 2019</span>
                     </div>
-                    <p class="text-blue-400 mb-2">Fakih IVF | UAE</p>
-                    <p class="text-gray-300">Enterprise security risk assessments; implementation of security controls; SIEM, IDS/IPS, firewall, and endpoint monitoring.</p>
+                    <p class="text-blue-400 mb-2 text-sm">Fakih IVF | UAE</p>
+                    <p class="text-gray-300 text-sm">Enterprise security risk assessments; implementation of security controls; SIEM, IDS/IPS, firewall, and endpoint monitoring.</p>
                 </div>
             </div>
 
@@ -202,17 +201,17 @@
                     <h4 class="text-xl font-bold text-white">PhD in Computer Science</h4>
                     <p class="text-blue-400">University of New Brunswick, Canada | 2020 – 2024</p>
                     <p class="text-sm text-gray-400 mt-1">GPA: 4.1 / 4.3</p>
-                    <p class="mt-2 text-gray-300 italic">Thesis: Unmasking Stealthy Threats: Techniques for Identifying and Analyzing Obfuscated Malware</p>
+                    <p class="mt-2 text-gray-300 italic text-sm">Thesis: Unmasking Stealthy Threats: Techniques for Identifying and Analyzing Obfuscated Malware</p>
                 </div>
                 <div class="theme-card">
                     <h4 class="text-xl font-bold text-white">MSc in Computer Science</h4>
-                    <p class="text-blue-400">Al-Zaytoonah University, Jordan | 2015</p>
+                    <p class="text-blue-400 text-sm">Al-Zaytoonah University, Jordan | 2015</p>
                     <p class="text-sm text-gray-400 mt-1">GPA: 87.6 / 100</p>
-                    <p class="mt-2 text-gray-300 italic">Thesis: An Improved Approach for Secured Mobile Payment System Based on Public-Key Cryptography</p>
+                    <p class="mt-2 text-gray-300 italic text-sm">Thesis: An Improved Approach for Secured Mobile Payment System Based on Public-Key Cryptography</p>
                 </div>
                 <div class="theme-card">
                     <h4 class="text-xl font-bold text-white">BSc in Computer Science</h4>
-                    <p class="text-blue-400">Zarqa University, Jordan | 2012</p>
+                    <p class="text-blue-400 text-sm">Zarqa University, Jordan | 2012</p>
                 </div>
             </div>
 
@@ -220,7 +219,7 @@
                 <h3 class="section-title">Technical Expertise</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="theme-card">
-                        <h4 class="text-blue-400 font-bold mb-3">SECURITY</h4>
+                        <h4 class="text-blue-400 font-bold mb-3 text-sm">SECURITY</h4>
                         <div class="flex flex-wrap gap-2">
                             <span class="skill-tag">Malware Analysis</span><span class="skill-tag">Packing Detection</span>
                             <span class="skill-tag">Threat Hunting</span><span class="skill-tag">APT Analysis</span>
@@ -228,7 +227,7 @@
                         </div>
                     </div>
                     <div class="theme-card">
-                        <h4 class="text-blue-400 font-bold mb-3">AI & DATA</h4>
+                        <h4 class="text-blue-400 font-bold mb-3 text-sm">AI & DATA</h4>
                         <div class="flex flex-wrap gap-2">
                             <span class="skill-tag">Deep Learning</span><span class="skill-tag">CNNs</span>
                             <span class="skill-tag">TensorFlow</span><span class="skill-tag">Isolation Forest</span>
@@ -237,7 +236,7 @@
                         </div>
                     </div>
                     <div class="theme-card">
-                        <h4 class="text-blue-400 font-bold mb-3">SYSTEMS & TOOLS</h4>
+                        <h4 class="text-blue-400 font-bold mb-3 text-sm">SYSTEMS & TOOLS</h4>
                         <div class="flex flex-wrap gap-2">
                             <span class="skill-tag">C/C++</span><span class="skill-tag">Java</span>
                             <span class="skill-tag">SQL</span><span class="skill-tag">Windows API</span>
@@ -246,7 +245,7 @@
                         </div>
                     </div>
                     <div class="theme-card">
-                        <h4 class="text-blue-400 font-bold mb-3">NETWORKING & LOGS</h4>
+                        <h4 class="text-blue-400 font-bold mb-3 text-sm">NETWORKING & LOGS</h4>
                         <div class="flex flex-wrap gap-2">
                             <span class="skill-tag">Endpoint Logs</span><span class="skill-tag">Network Logs</span>
                             <span class="skill-tag">OSINT</span><span class="skill-tag">SIEM/IDS/IPS</span>
@@ -258,12 +257,12 @@
             <div class="sub-content hidden fade-in" id="publications">
                 <h3 class="section-title">Publications</h3>
                 <div class="theme-card">
-                    <p class="text-gray-300 mb-6 leading-relaxed">
+                    <p class="text-gray-300 mb-6 leading-relaxed text-sm">
                         Peer-reviewed journal and survey publications primarily in <strong>malware analysis</strong> and <strong>AI-driven security research</strong>, with additional contributions in cryptography.
                     </p>
                     <div class="flex flex-col items-center py-6 border-t border-gray-700">
-                        <p class="text-sm text-gray-400 mb-4 text-center">For a complete and up-to-date list of research papers:</p>
-                        <a href="https://scholar.google.com/citations?user=iBBlsIkAAAAJ" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-bold transition-all shadow-lg hover:shadow-blue-500/20">View Google Scholar Profile</a>
+                        <p class="text-xs text-gray-400 mb-4 text-center">For a complete and up-to-date list of research papers:</p>
+                        <a href="https://scholar.google.com/citations?user=iBBlsIkAAAAJ" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-bold transition-all shadow-lg hover:shadow-blue-500/20 text-sm">View Google Scholar Profile</a>
                     </div>
                 </div>
             </div>
@@ -273,7 +272,7 @@
     <section class="tab-content hidden" id="professional-activities">
         <h2 class="section-title">Professional Activities</h2>
         <div class="theme-card">
-            <ul class="space-y-4 text-gray-300">
+            <ul class="space-y-4 text-gray-300 text-sm">
                 <li class="flex items-start gap-3">
                     <span class="text-blue-500 mt-1">✔</span> Peer reviewer for international cybersecurity journals.
                 </li>
@@ -307,7 +306,6 @@
 </main>
 
 <script>
-    // Tab Switching Logic
     const mainButtons = document.querySelectorAll('#main-nav .tab-button-main');
     const mainSections = document.querySelectorAll('.tab-content');
 
@@ -321,7 +319,6 @@
         });
     });
 
-    // Sub-tab Logic
     const cvButtons = document.querySelectorAll('#cv-nav button');
     const cvSubSections = document.querySelectorAll('.sub-content');
 
